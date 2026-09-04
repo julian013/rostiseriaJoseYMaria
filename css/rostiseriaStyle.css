@@ -334,6 +334,59 @@ section{
 }
 .gallery-grid .img-frame{ aspect-ratio:1/1; border-radius:10px; }
 
+/* MÉTODOS DE PAGO / ENVÍOS: lista de íconos */
+.icon-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1.4rem;
+  margin-top:2rem;
+}
+.icon-list-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:1.6rem;
+  width:84px;
+  text-align:center;
+}
+.icon-list-item .icon-chip{
+  width: 56px;
+  height:56px;
+  border-radius:12px;
+  background:rgba(244,234,224,0.92);
+  border:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  transition:transform .25s ease, border-color .25s ease;
+}
+.icon-list-item:hover .icon-chip{
+  transform:translateY(-3px);
+  border-color:var(--gold);
+}
+.icon-list-item .icon-chip img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+/* Placeholder de texto corto (ej: "MP", "BNA") mientras no cargues el logo real */
+.icon-list-item .icon-chip .icon-placeholder{
+  font-family:var(--display);
+  font-weight:600;
+  font-size:0.78rem;
+  letter-spacing:0.01em;
+  color:#170D14;
+  opacity:0.6;
+  padding:0rem;
+}
+.icon-list-item span.label{
+  font-size:0.95rem;
+  letter-spacing:0.04em;
+  color:rgba(244,234,224,0.7);
+}
+
+
 /* ---- Comentarios ---- */
 .testimonial-grid{
   display:grid;
@@ -451,4 +504,41 @@ footer{
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
   .reveal{ opacity:1; transform:none; transition:none; }
+}
+
+/*boton flotante whatsapp */
+.whatsapp-float{
+  position:fixed;
+  bottom:1.5rem;
+  right:1.5rem;
+  z-index:200;
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  background:#35cb08;
+  color:#FFFFFF;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 6px 18px rgba(0,0,0,0.35);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.whatsapp-float svg, .whatsapp-float img{ 
+  width:85%; 
+  height:85%;
+  border-radius:50%;
+}
+
+.whatsapp-float:hover{
+  transform:scale(1.08);
+  box-shadow:0 8px 22px rgba(0,0,0,0.45);
+}
+
+@media(max-width:500px){
+  .whatsapp-float{
+    width:50px; height:50px;
+    bottom:1rem; right:1rem;
+  }
+  .whatsapp-float svg{ width:26px; height:26px; }
 }
